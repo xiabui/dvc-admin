@@ -10,7 +10,7 @@
               <svg id="barcode"></svg>
             </div>
             <FlatButton
-              icon="procedure"
+              icon="text-bullet-list-square-search"
               label="Tiếp nhận"
               background-color="#3062D4"
             />
@@ -28,14 +28,14 @@
             <div class="flex-1 d-flex flex-column align-items-start">
               <span class="summary-text"> Thông tin quy trình </span>
               <Divider />
-              <InformationContainer icon="list" label="Lĩnh vực">
+              <InformationContainer icon="document-bullet-list" label="Lĩnh vực">
                 <span class="h5-text-bold">Đăng ký học phần thay thế</span>
               </InformationContainer>
               <InformationContainer icon="tag" label="Mức độ">
                 <span class="h5-text-bold">3</span>
               </InformationContainer>
               <InformationContainer
-                icon="application-status"
+                icon="in-progress"
                 label="Trạng thái hồ sơ"
               >
                 <div :class="APPLICATION_STATUS['completed'].className">
@@ -64,14 +64,14 @@
             <div class="flex-1 d-flex flex-column align-items-start">
               <span class="summary-text"> Thời gian xử lý hồ sơ </span>
               <Divider />
-              <InformationContainer icon="date-received" label="Ngày tiếp nhận">
+              <InformationContainer icon="calendar-arrow-right" label="Ngày tiếp nhận">
                 <span class="h5-text-bold">21/01/2024 09:05:50</span>
               </InformationContainer>
-              <InformationContainer icon="date-answer" label="Ngày hẹn trả">
+              <InformationContainer icon="calendar-reply" label="Ngày hẹn trả">
                 <span class="h5-text-bold">25/01/2024 09:05:50</span>
               </InformationContainer>
               <InformationContainer
-                icon="date-complete"
+                icon="calendar-arrow-counter-clockwise"
                 label="Hạn xử lý toàn quy trình"
               >
                 <span class="h5-text-bold">
@@ -79,11 +79,11 @@
                   54 giây)
                 </span>
               </InformationContainer>
-              <InformationContainer icon="date-deadline" label="Hạn xử lý">
+              <InformationContainer icon="calendar-clock" label="Hạn xử lý">
                 <span class="h5-text-bold">24/01/2024 09:05:00</span>
               </InformationContainer>
               <InformationContainer
-                icon="date-remainning"
+                icon="calendar-assistant"
                 label="Thời gian còn lại"
               >
                 <span class="h5-text-bold"

@@ -43,7 +43,7 @@ interface IDrawer {
 const drawers: IDrawer[] = [
   {
     name: COMPONENT_NAMES.dashboard,
-    icon: "dashboard",
+    icon: "chart-multiple",
     title: "Tổng quan",
   },
   {
@@ -53,17 +53,17 @@ const drawers: IDrawer[] = [
   },
   {
     name: COMPONENT_NAMES.flow,
-    icon: "flow",
+    icon: "desktop-flow",
     title: "Quy trình",
   },
   {
     name: COMPONENT_NAMES.taskReceived,
-    icon: "task-received",
+    icon: "text-bullet-list-square-search",
     title: "Tiếp nhận",
   },
   {
     name: COMPONENT_NAMES.procedure,
-    icon: "procedure",
+    icon: "document-queue-add",
     title: "Thủ tục",
   },
 ];
