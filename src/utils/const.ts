@@ -18,12 +18,14 @@ export enum COLOR {
 
 export enum COMPONENT_NAMES {
   dashboard = "dashboard",
-  form = "form",
   newForm = "new-form",
+  form = "form",
+  newFlow = "new-flow",
   flow = "flow",
   taskReceived = "received",
   applicationDetail = "application-detail",
   procedure = "procedure",
+  newProcedure = "new-procedure",
 }
 
 export const APPLICATION_STATUS: { [key: string]: IApplicationStatus } = {

@@ -12,11 +12,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@bpmn-io/properties-panel": "^3.18.2",
     "@mdi/font": "^7.4.47",
+    "bpmn-js": "^17.2.1",
+    "bpmn-js-properties-panel": "^5.14.0",
+    "bpmn-js-token-simulation": "^0.34.0",
+    "camunda-bpmn-moddle": "^7.0.1",
     "fast-glob": "^3.3.2",
     "formiojs": "^4.18.2",
     "jsbarcode": "^3.11.6",
     "path": "^0.12.7",
+    "pinia": "^2.1.7",
     "primeflex": "^3.3.1",
     "primeicons": "^6.0.1",
     "primevue": "3.32.1",

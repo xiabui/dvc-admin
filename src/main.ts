@@ -1,3 +1,4 @@
+import { createPinia } from "pinia";
 import { createApp } from "vue";
 import { VueCookieNext } from "vue-cookie-next";
 import { registerPlugins } from "./plugins";
@@ -18,7 +19,7 @@ import DataTable from "primevue/datatable";
 import Column from "primevue/column";
 import SplitButton from "primevue/splitbutton";
 import ToastService from "primevue/toastservice";
-import ConfirmationService from 'primevue/confirmationservice';
+import ConfirmationService from "primevue/confirmationservice";
 
 const app = createApp(App);
 app.component("svg-icon", SvgIcon);
@@ -34,6 +35,7 @@ registerPlugins(app);
 
 app.use(i18n);
 app.use(router);
+app.use(createPinia());
 app.use(VueCookieNext);
 app.mount("#app");
 

@@ -1,5 +1,5 @@
 <template>
-  <Button :color="backgroundColor" :label="label" severity="info">
+  <Button :color="backgroundColor" :label="label" size="small" severity="info">
     <template #icon>
       <svg-icon v-if="icon" :name="icon" :size="iconSize" :color="color" />
     </template>

@@ -37,6 +37,15 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: "/new-flow",
+    name: COMPONENT_NAMES.newFlow,
+    component: () => import("@/views/flow/NewFlow.vue"),
+    meta: {
+      title: "New flow",
+      requiresAuth: false,
+    },
+  },
+  {
     path: "/task-received",
     name: COMPONENT_NAMES.taskReceived,
     component: () => import("@/views/taskReceived/TaskReceivedManagement.vue"),
@@ -60,6 +69,15 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/procedure/ProcedureManagement.vue"),
     meta: {
       title: "Procedure",
+      requiresAuth: false,
+    },
+  },
+  {
+    path: "/new-procedure",
+    name: COMPONENT_NAMES.newProcedure,
+    component: () => import("@/views/procedure/NewProcedure.vue"),
+    meta: {
+      title: "New Procedure",
       requiresAuth: false,
     },
   },

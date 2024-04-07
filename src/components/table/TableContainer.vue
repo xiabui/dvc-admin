@@ -5,7 +5,7 @@
       class="table-content"
       selectionMode="multiple"
       size="small"
-      scrollHeight="73vh"
+      scrollHeight="70vh"
       scrollable
       resizableColumns
       removableSort

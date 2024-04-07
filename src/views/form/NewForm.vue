@@ -14,8 +14,8 @@
             <FlatButton label="Xác nhận" background-color="#3062D4" />
           </div>
         </div>
-        <div class="dvc-card-body p-3">
-          <div class="d-flex flex-row align-center gap-1 mb-3">
+        <div class="dvc-card-body gap-1">
+          <div class="dvc-row">
             <TextField
               class="flex-1"
               label="Số hiệu"
@@ -35,7 +35,7 @@
               required
             />
           </div>
-          <div class="d-flex flex-row align-center gap-1 mb-3">
+          <div class="dvc-row my-2">
             <DropdownInput
               class="flex-1"
               label="Hiển thị thư"
