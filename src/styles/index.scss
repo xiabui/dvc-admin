@@ -336,7 +336,6 @@ svg:focus {
       .dvc-row {
         flex: 1;
         display: flex;
-        display: flex;
         gap: 0.5rem;
       }
 
@@ -600,18 +599,33 @@ li.p-highlight {
   }
 }
 
+.xml-content {
+  font-size: 14px;
+  color: #e0e0e0;
+  padding: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+  margin-bottom: 8px;
+  background-color: #111827;
+  border-radius: 4px;
+}
+
 .bio-modeler {
   position: relative;
   width: 100%;
   height: 80vh;
+  flex-grow: 1;
   display: flex;
+  gap: 8px;
 
   .bio-canvas {
     width: 100%;
-    border: red solid 1px;
+    border: 1px dashed $border;
+    border-radius: 4px
   }
 
   .bio-properties {
-    border: green solid 1px;
+    border: 1px solid $border;
+    border-radius: 4px;
   }
 }
