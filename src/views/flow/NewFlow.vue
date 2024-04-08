@@ -7,23 +7,22 @@
       header="Preview XML Content"
       style="max-width: 70vw"
     >
-      <div class="xml-content">
+      <div class="code-content">
         <pre>{{ xmlContent }}</pre>
       </div>
-      <div class="flex justify-content-end gap-2">
-        <OutlinedButton label="Copy" severity="primary" @click="onCopy"/>
-        <FlatButton label="Close" @click="isPreviewDialogShow = false" />
-      </div>
+      <template #footer>
+        <div class="flex justify-content-end gap-2">
+          <OutlinedButton label="Copy" severity="primary" @click="onCopy" />
+          <FlatButton label="Close" @click="isPreviewDialogShow = false" />
+        </div>
+      </template>
     </Dialog>
     <div class="main-body">
       <div class="dvc-card">
         <div class="dvc-card-header">
           <span class="h5">Tạo mới quy trình</span>
           <div class="d-flex flex-row align-items-center gap-2">
-            <OutlinedButton
-              label="Hủy thao tác"
-              severity="primary"
-            />
+            <OutlinedButton label="Hủy thao tác" severity="primary" />
             <FlatButton label="Xác nhận" background-color="#3062D4" />
             <FlatButton
               label="Preview XML (developer)"
@@ -66,7 +65,7 @@ const properties = ref<HTMLDivElement>();
 
 let modeler: BpmnModeler;
 const isPreviewDialogShow = ref(false);
-const xmlContent = ref<string>('');
+const xmlContent = ref<string>("");
 
 onMounted(async () => {
   modeler = new BpmnModeler({
@@ -100,7 +99,7 @@ onBeforeUnmount(() => {
   }
 });
 
-const onCopy = async () => {  
+const onCopy = async () => {
   await navigator.clipboard.writeText(xmlContent.value);
   alert("Copied");
 };
