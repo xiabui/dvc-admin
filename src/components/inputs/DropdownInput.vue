@@ -1,11 +1,14 @@
 <template>
   <div class="d-flex flex-column">
-    <label v-if="label" class="mb-1">
+    <label v-if="label" class="mb-1 text-normal">
       {{ label }}
       <span v-if="required" class="text-required">*</span>
     </label>
     <Dropdown
-      v-model="value"
+      optionLabel="label"
+      optionValue="value"
+      :options="options"
+      :modelValue="value"
       :placeholder="placeholder"
       :required="required"
       :disabled="disabled"
@@ -18,25 +21,25 @@
 </template>
 <script setup lang="ts">
 import Dropdown from "primevue/dropdown";
-import type { IDropdownItem } from "@/utils/types";
 import { ref } from "vue";
+import type { IDropdownItem } from "@/utils/types";
 
 defineProps({
   label: String,
+  value: String,
   placeholder: String,
   required: Boolean,
   disabled: Boolean,
-  items: Array<IDropdownItem>,
+  options: Array<IDropdownItem>,
 });
 
 const emit = defineEmits<{
-  value: [any];
+  onChange: [string];
 }>();
 
 const validateMessage = ref<string>("");
-const value = ref();
 
-const onValueChange = (data: IDropdownItem) => {
-  emit("value", data.value);
+const onValueChange = (data: string) => {
+  emit("onChange", data);
 };
 </script>

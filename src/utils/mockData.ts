@@ -1,32 +1,36 @@
-import { IService } from "./types";
+import { IDropdownItem, IService } from "./types";
 
-const teacherServices: IService[] = [
+const provinces: IDropdownItem[] = [
   {
-    icon: "list-protected",
-    title: "Quản lý chế độ và chính sách nhân sự",
+    label: "Tỉnh Bình Dương",
+    value: "1",
   },
   {
-    icon: "user-work",
-    title: "Quản lý nhân sự và đào tạo",
+    label: "Tỉnh Bình Phước",
+    value: "2",
   },
   {
-    icon: "certificate",
-    title: "Đánh giá và thăng tiến",
+    label: "Tỉnh Vĩnh Long",
+    value: "3",
+  },
+  {
+    label: "Thành phố Hồ Chí Minh",
+    value: "4",
   },
 ];
 
-const studentServices: IService[] = [
+const genders: IDropdownItem[] = [
   {
-    icon: "hat-graduate",
-    title: "Quản lý học phần và thời khóa biểu",
+    label: "Nam",
+    value: "1",
   },
   {
-    icon: "bookmark",
-    title: "Quản lý giảng dạy và học tập",
+    label: "Nữ",
+    value: "2",
   },
   {
-    icon: "flask",
-    title: "Quản lý học tập và nghiên cứu",
+    label: "Khác",
+    value: "3",
   },
 ];
 
@@ -274,8 +278,8 @@ const applicationData: { [key: string]: any }[] = [
 ];
 
 export {
-  teacherServices,
-  studentServices,
+  genders,
+  provinces,
   formData,
   receivedApplicationData,
   flowData,

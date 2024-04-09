@@ -25,8 +25,8 @@ export interface ITableAction {
 }
 
 export interface IDropdownItem {
-  name: string;
-  value: string | number;
+  label: string;
+  value: string;
 }
 
 export interface ITableProps {

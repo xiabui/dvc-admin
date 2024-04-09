@@ -117,106 +117,13 @@
       <div class="dvc-card">
         <TabView>
           <TabPanel header="Thông tin chung">
-            <div class="dvc-column">
-              <div class="dvc-tab-content-header">
-                <span class="title">Thông tin người nộp</span>
-                <FlatButton
-                  icon="text-bullet-list-square-search"
-                  label="Tiếp nhận"
-                  background-color="#3062D4"
-                />
-              </div>
-              <div class="dvc-row dvc-md-column dvc-padding">
-                <div class="dvc-column">
-                  <TextField
-                    label="Họ và tên"
-                    value="Nguyen Van A"
-                    disabled
-                    required
-                  />
-                  <TextField
-                    label="Ngày sinh"
-                    value="20/11/2006"
-                    disabled
-                    required
-                  />
-                  <TextField label="Giới tính" value="Nam" disabled />
-                  <TextField label="Tỉnh/TP" value="Tỉnh Bình Dương" disabled />
-                  <TextField
-                    label="Địa chỉ liên hệ"
-                    value="Số 1 đường A xóm B"
-                    disabled
-                  />
-                </div>
-                <div class="dvc-column">
-                  <TextField
-                    label="Khoa/Viện/Đơn vị"
-                    value="Viện Kĩ thuật Công nghệ"
-                    disabled
-                    required
-                  />
-                  <TextField
-                    label="Mã số sinh viên/Mã CBGV"
-                    value="1824801030095"
-                    disabled
-                  />
-                  <TextField label="Vai trò" value="Sinh viên" disabled />
-                  <TextField
-                    label="Email"
-                    value="1824801030095@student.tdmu.edu.vn"
-                    disabled
-                    required
-                  />
-                  <TextField
-                    label="Số điện thoại"
-                    value="0333 333 333"
-                    disabled
-                  />
-                </div>
-              </div>
-            </div>
+            <GeneralInformation />
           </TabPanel>
           <TabPanel header="Thành phần hồ sơ">
-            <div class="dvc-column">
-              <div class="dvc-tab-content-header">
-                <span class="title">Biểu mẫu</span>
-                <FlatButton
-                  icon="text-bullet-list-square-search"
-                  label="Tiếp nhận"
-                  background-color="#3062D4"
-                />
-              </div>
-              <div class="dvc-padding">
-                <TableContainer
-                  :columns="APPLICATION_COLUMNS"
-                  :data="applicationData"
-                  :moreActions="moreActions"
-                  :footer="false"
-                />
-              </div>
-              <div class="dvc-card-middle">
-                <span class="title">Đính kèm</span>
-                <FlatButton
-                  icon="upload"
-                  label="Tải tệp lên"
-                  background-color="#3062D4"
-                />
-              </div>
-              <div class="dvc-padding">
-                <UploadFile />
-              </div>
-            </div>
+            <ProfileComponent />
           </TabPanel>
           <TabPanel header="Quy trình">
-            <p class="m-0">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati cupiditate non
-              provident, similique sunt in culpa qui officia deserunt mollitia
-              animi, id est laborum et dolorum fuga. Et harum quidem rerum
-              facilis est et expedita distinctio. Nam libero tempore, cum soluta
-              nobis est eligendi optio cumque nihil impedit quo minus.
-            </p>
+            <ApplicationFlow />
           </TabPanel>
         </TabView>
       </div>
@@ -226,12 +133,12 @@
 <script setup lang="ts">
 import FlatButton from "@/components/buttons/FlatButton.vue";
 import OutlinedButton from "@/components/buttons/OutlinedButton.vue";
-import TableContainer from "@/components/table/TableContainer.vue";
-import TextField from "@/components/inputs/TextField.vue";
 import InformationContainer from "@/components/commons/InformationContainer.vue";
-import UploadFile from "@/components/inputs/UploadFile.vue";
 import MainLayout from "@/layouts/MainLayout.vue";
 import MainNavbar from "@/layouts/components/MainNavbar.vue";
+import GeneralInformation from "./GeneralInformation.vue";
+import ProfileComponent from "./ProfileComponent.vue";
+import ApplicationFlow from "./ApplicationFlow.vue";
 import Chip from "primevue/chip";
 import TabView from "primevue/tabview";
 import TabPanel from "primevue/tabpanel";
@@ -239,10 +146,8 @@ import JsBarcode from "jsbarcode";
 import router from "@/router";
 
 import { COMPONENT_NAMES, APPLICATION_STATUS } from "@/utils/const";
-import { APPLICATION_COLUMNS } from "@/utils/table";
-import { applicationData } from "@/utils/mockData";
+
 import { onMounted, ref } from "vue";
-import type { ITableAction } from "@/utils/types";
 
 const applicationId = ref<string>("PTC001.24.03.11.12312");
 
@@ -253,14 +158,6 @@ onMounted(() => {
 const onCancel = () => {
   router.back();
 };
-
-const moreActions: ITableAction[] = [
-  {
-    icon: "edit",
-    action: () => {},
-  },
-  { icon: "delete", action: () => {} },
-];
 
 const generateBarcode = () => {
   JsBarcode("#barcode", applicationId.value, {

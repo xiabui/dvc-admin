@@ -57,7 +57,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/application-detail",
     name: COMPONENT_NAMES.applicationDetail,
-    component: () => import("@/views/taskReceived/ApplicationDetail.vue"),
+    component: () => import("@/views/taskReceived/components/ApplicationDetail.vue"),
     meta: {
       title: "Application detail",
       requiresAuth: false,
