@@ -5,7 +5,7 @@
       <span v-if="required" class="text-required">*</span>
     </label>
     <InputText
-      v-model="value"
+      v-model="inputValue"
       :placeholder="placeholder"
       :required="required"
       :disabled="disabled"
@@ -20,9 +20,10 @@
 </template>
 <script setup lang="ts">
 import InputText from "primevue/inputtext";
-import { ref } from "vue";
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 
-defineProps({
+const props = defineProps({
+  value: String,
   label: String,
   placeholder: String,
   required: Boolean,
@@ -34,7 +35,24 @@ const emit = defineEmits<{
   value: [string];
 }>();
 
-const value = ref();
+const inputValue = ref();
+
+onMounted(() => {
+  setValue();
+});
+
+onBeforeUnmount(() => {
+  valueWatch();
+});
+
+const valueWatch = watch(
+  () => props.value,
+  () => setValue,
+);
+
+const setValue = () => {
+  inputValue.value = props.value;
+};
 
 const onValueChange = (data: string | undefined) => {
   emit("value", data ?? "");

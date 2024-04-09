@@ -181,9 +181,12 @@ svg:focus {
     }
 
     .main-body {
-      width: 100%;
-      overflow: hidden;
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      overflow: auto;
       padding: 0 1rem;
 
       &:last-child {
@@ -280,6 +283,22 @@ svg:focus {
       border-radius: 4px;
       box-shadow: 0px 0px 4px 0px #0000000d;
 
+      .dvc-tab-content-header {
+        padding: 8px 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border;
+
+        .title {
+          font-size: 18px;
+          font-weight: 600;
+          text-align: left;
+          color: #1e293b;
+        }
+      }
+
       .dvc-card-header {
         padding: 8px 16px;
         border-bottom: 1px solid #f2f4f6;
@@ -314,29 +333,30 @@ svg:focus {
       }
 
       .dvc-card-body {
-        flex: 1;
+        flex-grow: 1;
         width: 100%;
         padding: 0.5rem 1rem;
-        overflow-y: auto;
-
-        .dvc-column {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          overflow-y: auto;
-          gap: 0.5rem;
-        }
 
         .dvc-column-body {
-          flex: 1;
-          overflow-y: auto;
+          flex-grow: 1;
         }
+      }
+
+      .dvc-padding {
+        padding: 16px;
       }
 
       .dvc-row {
         flex: 1;
         display: flex;
         gap: 0.5rem;
+      }
+
+      .dvc-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
       }
 
       .dvc-card-footer {
@@ -545,10 +565,15 @@ svg:focus {
   border: 1px solid #1e293b;
 }
 
-.summary-text {
-  font-size: 12px;
-  font-weight: 600;
-  color: #1e293b;
+.summary-container {
+  padding: 8px 0;
+  border-bottom: 1px solid $border;
+
+  .summary-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+  }
 }
 
 .text-normal {
@@ -646,5 +671,107 @@ li.p-highlight {
 
   .p-dialog-footer {
     padding: 0 16px 16px 16px !important;
+  }
+}
+
+.p-tabview .p-tabview-panels {
+  padding: 0 !important;
+
+}
+
+.p-disabled, .p-component:disabled {
+  opacity: 0.9 !important;
+}
+
+.p-inputtext, .p-inputtext.p-inputtext-sm {
+  color: #111827 !important;
+}
+
+.text-danger {
+  color: #dd1224;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-upload-file {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: hidden;
+
+  .file-input {
+    border: 1px dashed #A6A6A6;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .v-field {
+      border: none;
+      height: 100%;
+    }
+
+    .v-input__prepend {
+      display: none;
+    }
+
+    .v-input__control {
+      height: 100%;
+      width: 100%;
+
+      .v-field {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .v-field__prepend-inner {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .v-input__slot::before {
+        border-style: none !important;
+      }
+    }
+
+    .v-input__details {
+      display: none;
+      position: absolute;
+      left: 50%;
+      bottom: 13%;
+      transform: translate(-50%, 0);
+      .v-messages__message {
+        font-weight: 500;
+        font-size: 14px;
+        color: #f44336 !important;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .temp-flex-center {
+    margin-top: 30px;
+  }
+}
+
+
+// Medium screen and below
+@media only screen and (max-width: 1024px) {
+  .dvc-md-column {
+    display: flex;
+    flex-direction: column !important;
   }
 }

@@ -61,15 +61,11 @@
       <template #empty>
         <div class="empty-data">
           <img height="70" width="70" src="@/assets/icons/empty-data.svg" />
-          <div
-            class="empty-data-label"
-          >
-          Không có dữ liệu
-          </div>
+          <div class="empty-data-label">Không có dữ liệu</div>
         </div>
       </template>
     </DataTable>
-    <TableFooter />
+    <TableFooter v-if="footer" />
   </div>
 </template>
 <script setup lang="ts">
@@ -84,6 +80,10 @@ defineProps({
   multipleSelect: Boolean,
   isLoading: Boolean,
   moreActions: Array<ITableAction>,
+  footer: {
+    type: Boolean,
+    default: true,
+  },
   columns: {
     type: Array<ITableProps>,
     required: true,

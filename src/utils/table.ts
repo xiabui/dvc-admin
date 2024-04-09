@@ -53,6 +53,32 @@ export const RECEIVED_APPLICATION_COLUMNS: ITableProps[] = [
   },
 ];
 
+export const APPLICATION_COLUMNS: ITableProps[] = [
+  {
+    field: "stt",
+    title: "STT",
+    sortable: true,
+  },
+  {
+    field: "name",
+    title: "Tên biểu mẫu",
+    sortable: true,
+  },
+  {
+    field: "target",
+    title: "Đối tượng nộp",
+    sortable: true,
+  },
+  {
+    field: "created_date",
+    title: "Ngày khởi tạo",
+  },
+  {
+    field: "updated_date",
+    title: "Ngày cập nhật",
+  },
+];
+
 export const FLOW_MANAGEMENT_COLUMNS: ITableProps[] = [
   {
     field: "id",

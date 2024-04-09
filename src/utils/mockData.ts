@@ -249,6 +249,29 @@ const procedureData: { [key: string]: any }[] = [
     updated_date: "01 May 2021, 00:00",
   },
 ];
+const applicationData: { [key: string]: any }[] = [
+  {
+    stt: "1",
+    name: "PTC01-Xin nghỉ phép",
+    target: "Người nộp hồ sơ",
+    created_date: "01 May 2021, 00:00",
+    updated_date: "01 May 2021, 00:00",
+  },
+  {
+    stt: "2",
+    name: "PTC02-Xác nhận nghỉ phép của đơn vi",
+    target: "Người xử lý hồ sơ",
+    created_date: "01 May 2021, 00:00",
+    updated_date: "01 May 2021, 00:00",
+  },
+  {
+    stt: "3",
+    name: "PTC01-Xin nghỉ phép",
+    target: "Người nộp hồ sơ",
+    created_date: "01 May 2021, 00:00",
+    updated_date: "01 May 2021, 00:00",
+  },
+];
 
 export {
   teacherServices,
@@ -256,5 +279,6 @@ export {
   formData,
   receivedApplicationData,
   flowData,
-  procedureData
+  procedureData,
+  applicationData,
 };
