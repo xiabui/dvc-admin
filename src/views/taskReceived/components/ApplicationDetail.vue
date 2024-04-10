@@ -6,7 +6,7 @@
         <div class="dvc-card-header">
           <span class="h5">{{ applicationId }}</span>
           <div class="d-flex flex-row align-items-center gap-2">
-            <div class="barcode-container">
+            <div class="barcode-container" @click="showPrintTicketDialog">
               <svg id="barcode"></svg>
             </div>
             <FlatButton
@@ -128,6 +128,13 @@
         </TabView>
       </div>
     </div>
+
+    <ApplicationTicket
+      v-if="isShowTicket"
+      :show="isShowTicket"
+      :title="applicationId"
+      @close="isShowTicket = false"
+    />
   </MainLayout>
 </template>
 <script setup lang="ts">
@@ -148,8 +155,10 @@ import router from "@/router";
 import { COMPONENT_NAMES, APPLICATION_STATUS } from "@/utils/const";
 
 import { onMounted, ref } from "vue";
+import ApplicationTicket from "./ApplicationTicket.vue";
 
 const applicationId = ref<string>("PTC001.24.03.11.12312");
+const isShowTicket = ref<boolean>(false);
 
 onMounted(() => {
   generateBarcode();
@@ -160,13 +169,21 @@ const onCancel = () => {
 };
 
 const generateBarcode = () => {
-  JsBarcode("#barcode", applicationId.value, {
-    format: "CODE128",
-    lineColor: "#1E293B",
-    width: 1,
-    height: 12,
-    fontSize: 9,
-    displayValue: true,
-  });
+  try {
+    JsBarcode("#barcode", applicationId.value, {
+      format: "CODE128",
+      lineColor: "#1E293B",
+      width: 1,
+      height: 12,
+      fontSize: 9,
+      displayValue: true,
+    });
+  } catch (ex) {
+    console.error(ex);
+  }
+};
+
+const showPrintTicketDialog = () => {
+  isShowTicket.value = true;
 };
 </script>

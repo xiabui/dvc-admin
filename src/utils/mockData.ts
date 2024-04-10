@@ -253,6 +253,7 @@ const procedureData: { [key: string]: any }[] = [
     updated_date: "01 May 2021, 00:00",
   },
 ];
+
 const applicationData: { [key: string]: any }[] = [
   {
     stt: "1",
@@ -277,6 +278,116 @@ const applicationData: { [key: string]: any }[] = [
   },
 ];
 
+const actionHistoryData: { [key: string]: any }[] = [
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  {
+    date: "21/01/2024, 00:00",
+    target: "Người nộp hồ sơ",
+    action: "Chỉnh sửa hồ sơ",
+  },
+  
+  
+];
+
 export {
   genders,
   provinces,
@@ -285,4 +396,5 @@ export {
   flowData,
   procedureData,
   applicationData,
+  actionHistoryData
 };

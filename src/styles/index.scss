@@ -719,7 +719,6 @@ li.p-highlight {
     font-weight: 500 !important;
     color: #1e293b !important;
   }
-
 }
 
 .text-overflow-x-hidden {
@@ -809,10 +808,35 @@ li.p-highlight {
   }
 }
 
+.dialog-content {
+  .barcode-container {
+    border: none;
+    border-bottom: 1px solid $border;
+
+    .barcode {
+      width: 100%;
+    }
+  }
+}
+
 // Medium screen and below
 @media only screen and (max-width: 1024px) {
   .dvc-md-column {
     display: flex;
     flex-direction: column !important;
+    gap: 16px !important;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-content,
+  .print-content * {
+    visibility: visible;
+    padding: 0;
+    border: none;
   }
 }

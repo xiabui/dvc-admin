@@ -135,3 +135,21 @@ export const PROCUDURE_MANAGEMENT_COLUMNS: ITableProps[] = [
     title: "Ngày cập nhật",
   },
 ];
+
+export const ACTION_HISTORY_COLUMN: ITableProps[] = [
+  {
+    field: "date",
+    title: "Ngày và giờ",
+    sortable: true,
+  },
+  {
+    field: "target",
+    title: "Đối tượng tác động",
+    sortable: true,
+  },
+  {
+    field: "action",
+    title: "Thao tác",
+    sortable: true,
+  },
+];

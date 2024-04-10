@@ -12,6 +12,7 @@
               @click="onCancel"
             />
             <FlatButton label="Xác nhận" background-color="#3062D4" />
+            <FlatButton label="Preview" @click="onPreview" />
           </div>
         </div>
         <div class="dvc-card-body gap-1">
@@ -56,11 +57,27 @@
           </div>
 
           <div class="flex-1">
-            <FormioBuiler />
+            <FormioBuiler @schema="onFormioChange" />
           </div>
         </div>
       </div>
     </div>
+    <Dialog
+      v-model:visible="isPreviewDialogShow"
+      modal
+      header="Preview XML Content"
+      style="max-width: 70vw"
+    >
+      <div class="code-content">
+        <pre>{{ schemaContent }}</pre>
+      </div>
+      <template #footer>
+        <div class="flex justify-content-end gap-2">
+          <OutlinedButton label="Copy" severity="primary" @click="onCopy" />
+          <FlatButton label="Close" @click="isPreviewDialogShow = false" />
+        </div>
+      </template>
+    </Dialog>
   </MainLayout>
 </template>
 <script setup lang="ts">
@@ -71,9 +88,28 @@ import FormioBuiler from "@/components/inputs/FormioBuiler.vue";
 import TextField from "@/components/inputs/TextField.vue";
 import MainLayout from "@/layouts/MainLayout.vue";
 import MainNavbar from "@/layouts/components/MainNavbar.vue";
+import Dialog from "primevue/dialog";
+
 import router from "@/router";
 
 import { COMPONENT_NAMES } from "@/utils/const";
+import { ref } from "vue";
+
+const isPreviewDialogShow = ref(false);
+const schemaContent = ref<string>("");
+
+const onCopy = async () => {
+  await navigator.clipboard.writeText(JSON.stringify(schemaContent.value));
+  alert("Copied");
+};
+
+const onPreview = async () => {
+  isPreviewDialogShow.value = true;
+};
+
+const onFormioChange = (value: string) => {
+  schemaContent.value = value;
+};
 
 const onCancel = () => {
   router.back();
